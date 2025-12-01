@@ -1,6 +1,6 @@
 package token
 
-// Using a string for readability
+// TokenType uses a string for readability
 // TODO: consider a different type to improve performance
 type TokenType string
 
