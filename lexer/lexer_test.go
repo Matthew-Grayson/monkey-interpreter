@@ -70,7 +70,7 @@ let result = add(five, ten);
 		}
 
 		if tok.Literal != tt.expectedLiteral {
-			t.Fatalf("test[%d] - literal wrong, expected=%q, got=%q",
+			t.Fatalf("tests[%d] - literal wrong, expected=%q, got=%q",
 				i, tt.expectedLiteral, tok.Literal)
 		}
 	}

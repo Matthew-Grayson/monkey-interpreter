@@ -5,6 +5,8 @@ import "monkey/token"
 func (l *Lexer) NextToken() token.Token {
 	var tok token.Token
 
+	l.skipWhitespace()
+
 	switch l.ch {
 	case '=':
 		tok = newToken(token.ASSIGN, l.ch)
@@ -28,6 +30,11 @@ func (l *Lexer) NextToken() token.Token {
 	default:
 		if isLetter(l.ch) {
 			tok.Literal = l.readIdentifier()
+			tok.Type = token.LookupIdent(tok.Literal)
+			return tok
+		} else if isDigit(l.ch) {
+			tok.Type = token.INT
+			tok.Literal = l.readNumber()
 			return tok
 		} else {
 			tok = newToken(token.ILLEGAL, l.ch)
@@ -54,6 +61,7 @@ func New(input string) *Lexer {
 	return l
 }
 
+// TODO: consider combining readIdentifier and readNumber into a single readWhile function
 func (l *Lexer) readIdentifier() string {
 	position := l.position
 	for isLetter(l.ch) {
@@ -62,9 +70,21 @@ func (l *Lexer) readIdentifier() string {
 	return l.input[position:l.position]
 }
 
+func (l *Lexer) readNumber() string {
+	position := l.position
+	for isDigit(l.ch) {
+		l.readChar()
+	}
+	return l.input[position:l.position]
+}
+
 // isLetter determines what characters can be used in identifiers and can be modified to include additional characters
 func isLetter(ch byte) bool {
 	return 'a' <= ch && ch <= 'z' || 'A' <= ch && ch <= 'Z' || ch == '_'
+}
+
+func isDigit(ch byte) bool {
+	return '0' <= ch && ch <= '9'
 }
 
 // only supports single-byte characters
@@ -77,4 +97,10 @@ func (l *Lexer) readChar() {
 	}
 	l.position = l.readPosition
 	l.readPosition += 1
+}
+
+func (l *Lexer) skipWhitespace() {
+	for l.ch == ' ' || l.ch == '\t' || l.ch == '\n' || l.ch == '\r' {
+		l.readChar()
+	}
 }
