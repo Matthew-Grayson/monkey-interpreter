@@ -61,7 +61,7 @@ func New(input string) *Lexer {
 	return l
 }
 
-// TODO: consider combining readIdentifier and readNumber into a single readWhile function
+// TODO: Consider combining readIdentifier and readNumber into a single readWhile function
 func (l *Lexer) readIdentifier() string {
 	position := l.position
 	for isLetter(l.ch) {
@@ -70,6 +70,7 @@ func (l *Lexer) readIdentifier() string {
 	return l.input[position:l.position]
 }
 
+// TODO: Add support for negative, floating-point, hex, and octal numbers
 func (l *Lexer) readNumber() string {
 	position := l.position
 	for isDigit(l.ch) {

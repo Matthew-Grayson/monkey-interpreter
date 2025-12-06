@@ -4,7 +4,6 @@ package token
 // TODO: consider a different type to improve performance
 type TokenType string
 
-
 type Token struct {
 	Type    TokenType
 	Literal string
@@ -14,15 +13,15 @@ const (
 	ILLEGAL = "ILLEGAL"
 	EOF     = "EOF"
 
-//	Identifiers & literals
-	IDENT   = "IDENT"
-	INT	 = "INT"
+	//	Identifiers & literals
+	IDENT = "IDENT"
+	INT   = "INT"
 
-//	Operators
+	//	Operators
 	ASSIGN = "="
 	PLUS   = "+"
 
-//	Delimiters
+	//	Delimiters
 	COMMA     = ","
 	SEMICOLON = ";"
 
@@ -31,10 +30,9 @@ const (
 	LBRACE = "{"
 	RBRACE = "}"
 
-//	Token Keywords
+	//	Token Keywords
 	FUNCTION = "FUNCTION"
 	LET      = "LET"
-
 )
 
 var keywords = map[string] TokenType {
