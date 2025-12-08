@@ -5,7 +5,7 @@ The project follows and expands upon the structure presented in **_Writing an In
 
 ## What Monkey Is
 
-Monkey is a small, expression-oriented programming language designed specifically for learning how interpreters work.  
+*Monkey* is a small, expression-oriented programming language designed specifically for learning how interpreters work.  
 It includes:
 
 - **Variable bindings**: `let x = 5;`
@@ -20,7 +20,7 @@ It includes:
 - **Closures**
 - **REPL support**
 
-Monkey is intentionally minimal. Its simplicity makes it an ideal tool for understanding core concepts behind programming languages without being burdened by large specifications or complex compiler infrastructure.
+*Monkey* is intentionally minimal. Its simplicity makes it an ideal tool for understanding core concepts behind programming languages without being burdened by large specifications or complex compiler infrastructure.
 
 ## What This Interpreter Does
 
@@ -57,7 +57,7 @@ Example parsed expression:
 becomes an AST where `*` binds tighter than `+`.
 
 ### 3. AST Evaluation
-The evaluator walks the AST and executes Monkey programs.  
+The evaluator walks the AST and executes *Monkey* programs.  
 It handles:
 
 - arithmetic and boolean expressions
@@ -67,7 +67,7 @@ It handles:
 - blocks and conditionals
 
 ### 4. REPL
-A read-eval-print loop lets users type Monkey programs interactively:
+A read-eval-print loop lets users type *Monkey* programs interactively:
 
 ```
 $ monkey
@@ -78,9 +78,9 @@ $ monkey
 
 ## Project Goals
 
-- Fully implement the Monkey language described in the book
+- Fully implement the *Monkey* language described in the book
 - Add additional features not in the book (Unicode, extended operators, enhanced REPL, etc.)
-- Maintain high code quality using Go idioms and tooling (`gofmt`, `pre-commit`, tests`)
+- Maintain high code quality using Go idioms and tooling (`gofmt`, `pre-commit`, tests)
 - Provide a clean reference implementation for others learning interpreters
 
 ## Reference
