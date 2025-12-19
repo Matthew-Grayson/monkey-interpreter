@@ -1,11 +1,11 @@
 # Monkey Interpreter
 
-This repository contains a *Monkey* programming language interpreter written in Go.  
+This repository contains a *Monkey* programming language interpreter written in Go.
 The project follows and expands upon the structure presented in **_Writing an Interpreter in Go_** by *Thorsten Ball* (2016), a widely respected introductory text for building interpreters from scratch.
 
 ## What Monkey Is
 
-*Monkey* is a small, expression-oriented programming language designed specifically for learning how interpreters work.  
+*Monkey* is a small, expression-oriented programming language designed specifically for learning how interpreters work.
 It includes:
 
 - **Variable bindings**: `let x = 5;`
@@ -42,7 +42,7 @@ The lexer is responsible for:
 - reporting illegal characters
 
 ### 2. Parser (Pratt Parser)
-A Pratt parser is used to build an abstract syntax tree (AST).  
+A Pratt parser is used to build an abstract syntax tree (AST).
 It enables:
 - operator precedence
 - prefix/infix parsing
@@ -57,7 +57,7 @@ Example parsed expression:
 becomes an AST where `*` binds tighter than `+`.
 
 ### 3. AST Evaluation
-The evaluator walks the AST and executes *Monkey* programs.  
+The evaluator walks the AST and executes *Monkey* programs.
 It handles:
 
 - arithmetic and boolean expressions
@@ -85,9 +85,9 @@ $ monkey
 
 ## Reference
 
-Thorsten Ball.  
-**_Writing an Interpreter in Go_**.  
-(2016).  
+Thorsten Ball.
+**_Writing an Interpreter in Go_**.
+(2016).
 https://interpreterbook.com/
 
 This repository is an educational implementation inspired by the structure and exercises in the book, with modifications and extensions introduced along the way.
