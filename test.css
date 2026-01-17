@@ -1,0 +1,10 @@
+body {
+    --bg-color: #191A1C;
+    --sidebar-color: #25272A;
+    --text-color: #BCBEC4;
+    --name-color: #4E94D6;
+    --func-color: #CD8D6D;
+    --method-color: #6EAFBD;
+    --arg-color: #AEBF7E;
+    --const-color: #C87DBB;
+}
