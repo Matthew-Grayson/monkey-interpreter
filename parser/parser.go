@@ -93,15 +93,15 @@ func (p *Parser) peekError(t token.TokenType) {
 }
 
 func (p *Parser) peekPrecedence() int {
-	if p, ok := precedences[p.peekToken.Type]; ok {
-		return p
+	if prec, ok := precedences[p.peekToken.Type]; ok {
+		return prec
 	}
 	return LOWEST
 }
 
 func (p *Parser) curPrecedence() int {
-	if p, ok := precedences[p.curToken.Type]; ok {
-		return p
+	if prec, ok := precedences[p.curToken.Type]; ok {
+		return prec
 	}
 	return LOWEST
 }
