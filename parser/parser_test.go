@@ -64,7 +64,7 @@ func TestCallExpressionParsing(t *testing.T) {
 
 	exp, ok := stmt.Expression.(*ast.CallExpression)
 	if !ok {
-		t.Fatalf("stmt.Expression is not ast.Call Expression. got=%T", stmt.Expression)
+		t.Fatalf("stmt.Expression is not ast.CallExpression. got=%T", stmt.Expression)
 	}
 
 	if !testIdentifier(t, exp.Function, "add") {
